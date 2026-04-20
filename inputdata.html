@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Data Mahasiswa | WEB INFORMATIKA 2026</title>
+</head>
+<body>
+    <h1>
+        WEB INFORMATIKA 2026             
+    </h1>
+    <hr>
+    <table border="1" cellspacing="0" cellpadding="10px">
+        <tr>
+            <td>
+                <a href="index.html">Home</a>
+            </td>
+            <td>
+                <a href="profile.html">Profile</a>
+            </td>
+            <td>
+                <a href="contact.html">Contact</a>
+            </td>
+            <td>
+                <a href="mahasiswa.html">Data Mahasiswa</a>
+            </td>
+        </tr>
+    </table>
+    <h2>Input Data Mahasiswa</h2>
+    <form >
+        <table border="0" cellspacing="5px">
+            <tr>
+                <td><label for="nama">Nama</label></td>
+                <td>:</td>
+                <td><input type="text" name="nama" id="nama" /></td>
+            </tr>
+            <tr>
+                <td><label for="uts">UTS</label></td>
+                <td>:</td>
+                <td><input type="number" name="uts" id="uts" /></td>
+            </tr>
+            <tr>
+                <td><label for="uas">UAS</label></td>
+                <td>:</td>
+                <td><input type="number" name="uas" id="uas"></td>
+            </tr>
+            <tr>
+                <td><label for="tugas">TUGAS</label></td>
+                <td>:</td>
+                <td><input type="number" name="tugas" id="tugas"></td>
+            </tr>
+            <tr>
+                <td><label for="foto">FOTO</label></td>
+                <td>:</td>
+                <td><input type="file" name="foto" id="foto"></td>
+            </tr>
+        </table>
+        <input type="submit" name="submit" value="Kirim Data">
+
+        <label for="jurusan">Jurusan</label>
+        <select name="jurusan" id="jurusan">
+            <option value="informatika">Informatika</option>
+            <option value="informatika2">Informatika 2</option>
+            <option value="informatika3">Informatika 3</option>
+        </select>
+        <textarea name="alamat" id="alamat"></textarea>
+    </form>
+    <hr>
+</body>
+</html>
