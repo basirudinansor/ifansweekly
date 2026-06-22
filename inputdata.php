@@ -1,3 +1,28 @@
+<?php
+
+    require 'fungsi.php';
+
+    if(isset($_POST["kirim"]))
+    {
+        /// ketika ada data yang dikirim ke db kirim notifnya
+        if(tambahdata($_POST) > 0)
+        {
+            echo "<script>
+                    alert('Data Berhasil Ditambahkan!');
+                    window.location.href='mahasiswa.php';         
+                  </script>";
+        }
+        else
+        {
+            echo "<script>
+                    alert('Data Gagal Ditambahkan!');
+                    window.location.href='mahasiswa.php';         
+                  </script>";
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,43 +52,41 @@
         </tr>
     </table>
     <h2>Input Data Mahasiswa</h2>
-    <form >
+    <form action="" method="post" >
         <table border="0" cellspacing="5px">
             <tr>
                 <td><label for="nama">Nama</label></td>
                 <td>:</td>
-                <td><input type="text" name="nama" id="nama" /></td>
+                <td><input type="text" name="nama" id="nama" required /></td>
             </tr>
             <tr>
-                <td><label for="uts">UTS</label></td>
+                <td><label for="nim">NIM</label></td>
                 <td>:</td>
-                <td><input type="number" name="uts" id="uts" /></td>
+                <td><input type="number" name="nim" id="nim" required /></td>
             </tr>
             <tr>
-                <td><label for="uas">UAS</label></td>
+                <td><label for="prodi">Program Studi</label></td>
                 <td>:</td>
-                <td><input type="number" name="uas" id="uas"></td>
+                <td><input type="text" name="jurusan" id="prodi" required ></td>
             </tr>
             <tr>
-                <td><label for="tugas">TUGAS</label></td>
+                <td><label for="email">Email</label></td>
                 <td>:</td>
-                <td><input type="number" name="tugas" id="tugas"></td>
+                <td><input type="email" name="email" id="email"></td>
             </tr>
             <tr>
-                <td><label for="foto">FOTO</label></td>
+                <td><label for="nohp">No. HP</label></td>
                 <td>:</td>
-                <td><input type="file" name="foto" id="foto"></td>
+                <td><input type="number" name="no_hp" id="nohp"></td>
+            </tr>
+            <tr>
+                <td><label for="foto">Foto</label></td>
+                <td>:</td>
+                <td><input type="text" name="foto" id="goto"></td>
             </tr>
         </table>
-        <input type="submit" name="submit" value="Kirim Data">
+        <button type="submit" name="kirim" >Kirim Data</button>
 
-        <label for="jurusan">Jurusan</label>
-        <select name="jurusan" id="jurusan">
-            <option value="informatika">Informatika</option>
-            <option value="informatika2">Informatika 2</option>
-            <option value="informatika3">Informatika 3</option>
-        </select>
-        <textarea name="alamat" id="alamat"></textarea>
     </form>
     <hr>
 </body>

@@ -1,3 +1,9 @@
+<?php
+    require 'fungsi.php';
+    $qmahasiswa = "SELECT * FROM mahasiswa"; /// karena query ke tabel mahasiswa
+    $mahasiswas = tampildata($qmahasiswa); /// menghasilkan data mahasiswa dalam wadah
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,19 +48,28 @@
             <th>No. HP</th>
             <th>Foto</th>
             <th>Aksi</th>       
-        </tr>        
-        <tr>
-            <td align="center">1</td>
-            <td>Janggar Mahduf</td>
-            <td align="center">123123123</td>
-            <td align="center">Informatika</td>
-            <td align="center">hannggar@mail.com</td>
-            <td>08567766543</td>
-            <td><img src="assets/images/janggar.jfif" width="70px" height="70px" /></td>
-            <td>
-                <a href="ubahdata.php"><button>Edit</button></a> | <a href="hapusdata.php"><button>Hapus</button></a>
-            </td>
-        </tr>
+        </tr> 
+        <?php 
+            $no = 1;
+            foreach($mahasiswas as $mhs)
+            {
+        ?>       
+            <tr>
+                <td align="center"><?= $no ?></td>
+                <td><?= $mhs[1] ?></td>
+                <td align="center"><?= $mhs[2] ?></td>
+                <td align="center"><?= $mhs[3] ?></td>
+                <td align="center"><?= $mhs[4] ?></td>
+                <td><?= $mhs[5] ?></td>
+                <td><img src="assets/images/<?= $mhs[6] ?>" width="70px" height="70px" /></td>
+                <td>
+                    <a href="ubahdata.php"><button>Edit</button></a> | <a href="hapusdata.php"><button>Hapus</button></a>
+                </td>
+            </tr>
+        <?php
+            $no++;
+            }
+        ?>
         
     </table>
     <hr/>
