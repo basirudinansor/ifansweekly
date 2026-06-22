@@ -56,14 +56,14 @@
         ?>       
             <tr>
                 <td align="center"><?= $no ?></td>
-                <td><?= $mhs[1] ?></td>
-                <td align="center"><?= $mhs[2] ?></td>
-                <td align="center"><?= $mhs[3] ?></td>
-                <td align="center"><?= $mhs[4] ?></td>
-                <td><?= $mhs[5] ?></td>
-                <td><img src="assets/images/<?= $mhs[6] ?>" width="70px" height="70px" /></td>
+                <td><?= $mhs["nama"] ?></td>
+                <td align="center"><?= $mhs["nim"] ?></td>
+                <td align="center"><?= $mhs["jurusan"] ?></td>
+                <td align="center"><?= $mhs["email"] ?></td>
+                <td><?= $mhs["no_hp"] ?></td>
+                <td><img src="assets/images/<?= $mhs["foto"] ?>" width="70px" height="70px" /></td>
                 <td>
-                    <a href="ubahdata.php"><button>Edit</button></a> | <a href="hapusdata.php"><button>Hapus</button></a>
+                    <a href="ubahdata.php?id=<?= $mhs["id"] ?>"><button>Edit</button></a> | <a href="hapusdata.php?id=<?= $mhs["id"] ?>" onclick="return confirm('Yaqueeenn??')" ><button>Hapus</button></a>
                 </td>
             </tr>
         <?php
